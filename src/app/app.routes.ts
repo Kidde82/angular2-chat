@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { About } from './about/about';
-import { Home } from './home/home';
+import { Home } from './containers/home/home';
 import { RepoBrowser } from './github/repo-browser/repo-browser';
 import { RepoList } from './github/repo-list/repo-list';
 import { RepoDetail } from './github/repo-detail/repo-detail';
