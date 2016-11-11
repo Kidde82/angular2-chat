@@ -1,17 +1,17 @@
-import { Action, ActionCreator } from "redux";
+import { Action } from "@ngrx/store";
+
+import { type } from "../utils/util";
 import { User } from "../models/user";
 
-export const ADD = "[User] Add";
-
-export interface AddAction extends Action {
-	user: User;
+export const ActionTypes = {
+	LOAD: type("[User] Load")
 }
 
-export interface ListAction extends Action {
+export class LoadAction implements Action {
+	type = ActionTypes.LOAD;
+
+	constructor(public payload: User) {}
 }
 
-export const addAction: ActionCreator<AddAction> =
-	(user) => ({
-		type: ADD,
-		user: user
-	});
+export type Actions
+	= LoadAction;

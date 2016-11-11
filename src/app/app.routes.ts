@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
 import { About } from './about/about';
-import { Home } from './containers/home/home';
+import { Chat } from './containers/chat/chat';
 import { RepoBrowser } from './github/repo-browser/repo-browser';
 import { RepoList } from './github/repo-list/repo-list';
 import { RepoDetail } from './github/repo-detail/repo-detail';
 
 export const rootRouterConfig: Routes = [
-	{ path: '', redirectTo: 'home', pathMatch: 'full' },
-	{ path: 'home', component: Home },
+	{ path: '', redirectTo: 'chat', pathMatch: 'full' },
+	{ path: 'chat', component: Chat },
 	{ path: 'about', component: About },
 	{
 		path: 'github', component: RepoBrowser,

@@ -7,38 +7,56 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule } from "@angular/http";
 import { About } from './about/about';
-import { Home } from './containers/home/home';
+import { Chat } from './containers/chat/chat';
 import { RepoBrowser } from './github/repo-browser/repo-browser';
 import { RepoList } from './github/repo-list/repo-list';
 import { RepoDetail } from './github/repo-detail/repo-detail';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
-import { createStore, Store, compose } from "redux";
-import { AppStore } from "./app-store";
-import { AppState, default as reducer } from "./reducers";
+import { StoreModule } from "@ngrx/store";
+import { reducer } from './reducers';
+
+import { UserService, SessionStorageService } from "./services";
+import { UserListComponent } from "./components/user-list/user-list.component";
+import { UserAddComponent } from "./components/user-add/user-add.component";
+import { ChatWindowComponent } from "./components/chat-window/chat-window.component";
+import { ChatMessagesComponent } from "./components/chat-messages/chat-messages.component";
 
 @NgModule({
-	declarations: [AppComponent, About, RepoBrowser, RepoList, RepoDetail, Home],
-	imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(rootRouterConfig)],
+	declarations: [
+		AppComponent,
+		About,
+		RepoBrowser,
+		RepoList,
+		RepoDetail,
+		Chat,
+		UserListComponent,
+		UserAddComponent,
+		ChatWindowComponent,
+		ChatMessagesComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpModule,
+		StoreModule.provideStore(reducer),
+		RouterModule.forRoot(rootRouterConfig)
+	],
 	providers: [
+		UserService,
+		SessionStorageService,
 		Github,
 		{
 			provide: LocationStrategy,
 			useClass: HashLocationStrategy
-		},
-		{
-			provide: AppStore,
-			useFactory: () => store
 		}
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [
+		AppComponent
+	]
 })
 export class AppModule {
-	constructor(@Inject(AppStore) private store: Store<AppState>) {
+	constructor() {
 		console.log("constructor");
 	}
 }
-
-let store: Store<AppState> = createStore<AppState>(
-	reducer
-);
