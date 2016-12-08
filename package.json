@@ -1,5 +1,5 @@
 {
-  "name": "angular2-reduc-chat",
+  "name": "angular2-redux-chat",
   "version": "1.0.0",
   "description": "A simple chat application using angular2 and redux",
   "scripts": {
@@ -18,6 +18,7 @@
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^1.1.1",
     "css-loader": "^0.23.1",
+	"lodash": "^4.13.1",
     "raw-loader": "^0.5.1",
     "to-string-loader": "^1.1.4",
     "typescript": "^2.0.2",

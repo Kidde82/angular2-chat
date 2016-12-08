@@ -13,9 +13,6 @@ import { RepoList } from './github/repo-list/repo-list';
 import { RepoDetail } from './github/repo-detail/repo-detail';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
-import { StoreModule } from "@ngrx/store";
-import { reducer } from './reducers';
-
 import { UserService, SessionStorageService } from "./services";
 import { UserListComponent } from "./components/user-list/user-list.component";
 import { UserAddComponent } from "./components/user-add/user-add.component";
@@ -39,7 +36,6 @@ import { ChatMessagesComponent } from "./components/chat-messages/chat-messages.
 		BrowserModule,
 		FormsModule,
 		HttpModule,
-		StoreModule.provideStore(reducer),
 		RouterModule.forRoot(rootRouterConfig)
 	],
 	providers: [

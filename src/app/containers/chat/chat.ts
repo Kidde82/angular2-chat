@@ -3,7 +3,6 @@ import { Component, OnInit, OnChanges, Inject } from '@angular/core';
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
-import * as fromRoot from '../../reducers';
 import { UserService, SessionStorageService } from "../../services";
 import { User } from "../../models";
 
@@ -15,11 +14,9 @@ import { User } from "../../models";
 export class Chat implements OnInit, OnChanges {
 
 	constructor(
-		public store: Store<fromRoot.State>,
 		private userService: UserService,
 		private sessionStorageService: SessionStorageService
 	) {
-		store.subscribe(() => this.updateState());
 		this.updateState();
 	}
 
@@ -33,7 +30,7 @@ export class Chat implements OnInit, OnChanges {
 
 	updateState() {
 		console.log("Updatestate chat.ts");
-		console.log(this.store.select("users"));
+		// console.log(this.store.select("users"));
 	}
 
 	clearSession() {
