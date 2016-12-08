@@ -24,9 +24,9 @@ export class ChatWindowComponent {
 		let user1 = { id: "1", info: { nickname: "adam" }};
 		let user2 = { id: "2", info: { nickname: "bertil" }};
 		let user3 = { id: "3", info: { nickname: "caesar" }};
-		this.store.dispatch(this.userActions.addUser(user1));
-		this.store.dispatch(this.userActions.addUser(user2));
-		this.store.dispatch(this.userActions.addUser(user3));
+		this.store.dispatch(this.userActions.addUserSuccess(user1));
+		this.store.dispatch(this.userActions.addUserSuccess(user2));
+		this.store.dispatch(this.userActions.addUserSuccess(user3));
 		this.users$ = store.select("users");
 	}
 }
