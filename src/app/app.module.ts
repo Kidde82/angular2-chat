@@ -1,34 +1,24 @@
-import { NgModule, Inject } from '@angular/core'
+import { NgModule } from "@angular/core"
 import { RouterModule } from "@angular/router";
-import { rootRouterConfig } from "./app.routes";
-import { AppComponent } from "./app";
-import { Github } from "./github/shared/github";
-import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule } from "@angular/http";
-import { About } from './about/about';
-import { Chat } from './containers/chat/chat';
-import { RepoBrowser } from './github/repo-browser/repo-browser';
-import { RepoList } from './github/repo-list/repo-list';
-import { RepoDetail } from './github/repo-detail/repo-detail';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import {Store, StoreModule} from '@ngrx/store';
+import { LocationStrategy, HashLocationStrategy } from "@angular/common";
+import { Store, StoreModule } from "@ngrx/store";
 
-import reducer from './reducers';
+import { Chat } from "./containers/chat/chat";
+import reducer from "./reducers";
 import { UserActions } from "./actions";
 import { UserService, SessionStorageService } from "./services";
 import { UserListComponent } from "./components/user-list/user-list.component";
 import { UserAddComponent } from "./components/user-add/user-add.component";
 import { ChatWindowComponent } from "./components/chat-window/chat-window.component";
 import { ChatMessagesComponent } from "./components/chat-messages/chat-messages.component";
+import { rootRouterConfig } from "./app.routes";
+import { AppComponent } from "./app.component";
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		About,
-		RepoBrowser,
-		RepoList,
-		RepoDetail,
 		Chat,
 		UserListComponent,
 		UserAddComponent,
@@ -37,24 +27,16 @@ import { ChatMessagesComponent } from "./components/chat-messages/chat-messages.
 	],
 	imports: [
 		BrowserModule,
-		FormsModule,
 		HttpModule,
 		StoreModule.provideStore(reducer),
-		RouterModule.forRoot(rootRouterConfig)
+		RouterModule.forRoot(rootRouterConfig, { useHash: true })
 	],
 	providers: [
 		UserService,
 		UserActions,
-		SessionStorageService,
-		Github,
-		{
-			provide: LocationStrategy,
-			useClass: HashLocationStrategy
-		}
+		SessionStorageService
 	],
-	bootstrap: [
-		AppComponent
-	]
+	bootstrap: [ AppComponent ]
 })
 export class AppModule {
 	constructor() {

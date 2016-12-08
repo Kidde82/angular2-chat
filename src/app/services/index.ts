@@ -3,7 +3,6 @@ import { SessionStorageService } from "./session-storage.service";
 
 export {
 	UserService,
-
 	SessionStorageService
 }
 

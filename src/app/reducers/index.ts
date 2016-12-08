@@ -1,6 +1,6 @@
-import '@ngrx/core/add/operator/select';
-import {compose} from '@ngrx/core/compose';
-import {combineReducers} from '@ngrx/store';
+import "@ngrx/core/add/operator/select";
+import { compose } from "@ngrx/core/compose";
+import { combineReducers } from "@ngrx/store";
 
 import userListReducer, * as fromUserList from "./user-list";
 import userReducer, * as fromUser from "./user";

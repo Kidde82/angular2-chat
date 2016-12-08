@@ -5,6 +5,5 @@ import { Component } from "@angular/core";
 	templateUrl: "./chat-messages.component.html"
 })
 export class ChatMessagesComponent {
-	constructor () {
-	}
+	constructor () { }
 }

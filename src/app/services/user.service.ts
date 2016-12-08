@@ -1,6 +1,5 @@
 import "rxjs/add/operator/count";
 import { Injectable, Inject } from "@angular/core";
-
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 

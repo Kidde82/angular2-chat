@@ -1,6 +1,6 @@
 // import * as _ from "lodash";
-import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import {Action} from "@ngrx/store";
+import {Observable} from "rxjs/Observable";
 
 import { User } from "../models/User";
 import { UserActions } from "../actions";

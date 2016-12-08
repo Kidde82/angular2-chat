@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Store } from '@ngrx/store';
+import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
 import { AppState } from "../../reducers";
@@ -17,10 +17,6 @@ export class ChatWindowComponent {
 		private store: Store<AppState>,
 		private userActions: UserActions
 	) {
-		// this.users$ = store.let(fromRoot.getUserCollection);
-		// this.users$ = this.store.select("users");
-		// this.store.dispatch(this.userActions.loadUsers());
-
 		let user1 = { id: "1", info: { nickname: "adam" }};
 		let user2 = { id: "2", info: { nickname: "bertil" }};
 		let user3 = { id: "3", info: { nickname: "caesar" }};

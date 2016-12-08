@@ -1,4 +1,4 @@
-import {Action} from '@ngrx/store';
+import {Action} from "@ngrx/store";
 
 import { User } from "../models/User";
 import { UserActions } from "../actions";

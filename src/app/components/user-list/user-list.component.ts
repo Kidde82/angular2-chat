@@ -1,6 +1,6 @@
-import 'rxjs/add/operator/let';
+import "rxjs/add/operator/let";
 import { Component, Input, OnInit } from "@angular/core";
-import { Store } from '@ngrx/store';
+import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
 import { User } from "../../models";
