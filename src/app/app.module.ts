@@ -3,10 +3,8 @@ import { RouterModule } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule } from "@angular/http";
 import { LocationStrategy, HashLocationStrategy } from "@angular/common";
-import { Store, StoreModule, combineReducers } from "@ngrx/store";
-import { compose } from "@ngrx/core/compose";
+import { Store, StoreModule } from "@ngrx/store";
 import { EffectsModule } from '@ngrx/effects';
-import {storeLogger} from "ngrx-store-logger";
 
 import { Chat } from "./containers/chat/chat";
 import reducer from "./reducers";
@@ -32,12 +30,7 @@ import { UserEffects } from './effects';
 	imports: [
 		BrowserModule,
 		HttpModule,
-		StoreModule.provideStore(
-			compose(
-				storeLogger(),
-				combineReducers
-			)(reducer)
-		),
+		StoreModule.provideStore(reducer),
 		EffectsModule.run(UserEffects),
 		RouterModule.forRoot(rootRouterConfig, { useHash: true })
 	],

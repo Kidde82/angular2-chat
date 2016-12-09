@@ -17,13 +17,11 @@ export class UserService {
 	) {}
 
 	getUsers(): Observable<User[]> {
-		console.log("step4");
 		return this.http.get(this.apiUrl + "/api/v1/users")
 		.map(res => res.json());
 	}
 
 	save(user: User): void {
-		console.log("save user");
 		if (!user.id) {
 			user.id = this.getNextId();
 		}

@@ -9,14 +9,12 @@ export class UserActions {
 	static ADD_USER_SUCCESS = "[User] Add user success";
 
 	loadUsers(): Action {
-		console.log("step2");
 		return {
 			type: UserActions.LOAD_USERS
 		};
 	}
 
 	loadUsersSuccess(users): Action {
-		console.log("step3");
 		return {
 			type: UserActions.LOAD_USERS_SUCCESS,
 			payload: users

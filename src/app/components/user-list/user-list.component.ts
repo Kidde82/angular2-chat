@@ -21,8 +21,8 @@ export class UserListComponent implements OnInit {
 	) {
 		this.users$ = store.select(this.userSelector.getUsers());
 	}
+
 	ngOnInit() {
-		console.log("user-list");
-		console.log(this.users$);
+		console.log("user list oninit");
 	}
 }
