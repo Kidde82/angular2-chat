@@ -1,9 +1,12 @@
 import { UserEffects } from "./user";
+import { MessageEffects } from "./message";
 
 export {
-	UserEffects
+	UserEffects,
+	MessageEffects
 };
 
 export default [
-	UserEffects
+	UserEffects,
+	MessageEffects
 ];

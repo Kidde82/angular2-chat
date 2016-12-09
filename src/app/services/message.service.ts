@@ -6,37 +6,32 @@ import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
 import { SessionStorageService } from "./session-storage.service";
-import { User } from "../models";
+import { Message } from "../models";
 
 @Injectable()
-export class UserService {
+export class MessageService {
 	private apiUrl: string = "http://localhost:3001";
 
 	constructor (
 		private http: Http
 	) {}
 
-	getUsers(): Observable<User[]> {
-		return this.http.get(this.apiUrl + "/api/v1/users")
+	getMessages(): Observable<Message[]> {
+		return this.http.get(this.apiUrl + "/api/v1/messages")
 		.map(res => res.json());
 	}
 
-	save(user: User): Observable<User> {
-		if (!user.id) {
-			user.id = this.getNextId();
+	save(message: Message): Observable<Message> {
+		if (!message.id) {
+			message.id = this.getNextId();
 		}
 
 		let headers = new Headers({ 'Content-Type': 'application/json' });
 		let options = new RequestOptions({ headers: headers });
-		console.log("savinguser");
-		console.log(user);
-		return this.http.post(this.apiUrl + "/api/v1/user", user, options)
+
+		return this.http.post(this.apiUrl + "/api/v1/message", message, options)
 				.map(this.extractData)
 				.catch(this.handleError);
-
-		// this.sessionStorageService.writeObject("currentUser", user);
-
-		// this.store.dispatch(new collection.AddUserAction(user));
 	}
 
 	private getNextId(): string {

@@ -1,9 +1,12 @@
 import { UserActions } from "./user";
+import { MessageActions } from "./message";
 
 export {
-	UserActions
+	UserActions,
+	MessageActions
 }
 
 export default [
-	UserActions
+	UserActions,
+	MessageActions
 ];

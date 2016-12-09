@@ -1,9 +1,12 @@
 import { UserSelector } from "./user";
+import { MessageSelector } from "./message";
 
 export {
-	UserSelector
+	UserSelector,
+	MessageSelector
 };
 
 export default [
-	UserSelector
+	UserSelector,
+	MessageSelector
 ];

@@ -37,10 +37,10 @@ export class Chat implements OnInit, OnChanges {
 		this.sessionStorageService.remove("currentUser");
 	}
 
-	get userIsSet(): boolean {
-		// let currentUser = this.sessionStorageService.readObject<User>("currentUser");
-		// if (currentUser)
-		// 	return true;
+	get hasUser(): boolean {
+		let currentUser = this.sessionStorageService.readObject<User>("currentUser");
+		if (currentUser)
+			return true;
 		return false;
 	}
 }

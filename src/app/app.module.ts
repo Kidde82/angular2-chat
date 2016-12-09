@@ -8,15 +8,15 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { Chat } from "./containers/chat/chat";
 import reducer from "./reducers";
-import { UserActions } from "./actions";
-import { UserService, SessionStorageService } from "./services";
+import { UserActions, MessageActions } from "./actions";
+import { UserService, MessageService, SessionStorageService } from "./services";
 import { UserListComponent } from "./components/user-list/user-list.component";
 import { UserAddComponent } from "./components/user-add/user-add.component";
 import { ChatWindowComponent } from "./components/chat-window/chat-window.component";
 import { ChatMessagesComponent } from "./components/chat-messages/chat-messages.component";
 import { rootRouterConfig } from "./app.routes";
 import { AppComponent } from "./app.component";
-import { UserEffects } from './effects';
+import { UserEffects, MessageEffects } from './effects';
 
 @NgModule({
 	declarations: [
@@ -32,11 +32,14 @@ import { UserEffects } from './effects';
 		HttpModule,
 		StoreModule.provideStore(reducer),
 		EffectsModule.run(UserEffects),
+		EffectsModule.run(MessageEffects),
 		RouterModule.forRoot(rootRouterConfig, { useHash: true })
 	],
 	providers: [
 		UserService,
 		UserActions,
+		MessageService,
+		MessageActions,
 		SessionStorageService
 	],
 	bootstrap: [ AppComponent ]

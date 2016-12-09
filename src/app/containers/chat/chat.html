@@ -1,5 +1,5 @@
 <button (click)="clearSession()">Clear Session</button>
 
-<user-add *ngIf="!userIsSet"></user-add>
+<user-add *ngIf="!hasUser"></user-add>
 
-<chat-window *ngIf="!userIsSet"></chat-window>
+<chat-window *ngIf="hasUser"></chat-window>
