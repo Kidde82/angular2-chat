@@ -10,43 +10,27 @@ import { User } from "../models";
 
 @Injectable()
 export class UserService {
-	private apiUrl: string = "http://localhost:3001";
+	// private apiUrl: string = "http://localhost:3001/api/v1/";
+	private apiUrl: string = "http://localhost:3001/";
 
 	constructor (
 		private http: Http
 	) {}
 
 	getUsers(): Observable<User[]> {
-		return this.http.get(this.apiUrl + "/api/v1/users")
-		.map(res => res.json());
-	}
-
-	save(user: User): Observable<User> {
-		if (!user.id) {
-			user.id = this.getNextId();
+		return this.http.get(this.apiUrl + "users")
+				.map(res => {
+					return res.json();
+				})
 		}
 
+	save(user: User): Observable<User> {
 		let headers = new Headers({ 'Content-Type': 'application/json' });
 		let options = new RequestOptions({ headers: headers });
-		console.log("savinguser");
-		console.log(user);
-		return this.http.post(this.apiUrl + "/api/v1/user", user, options)
+
+		return this.http.post(this.apiUrl + "users", user, options)
 				.map(this.extractData)
 				.catch(this.handleError);
-
-		// this.sessionStorageService.writeObject("currentUser", user);
-
-		// this.store.dispatch(new collection.AddUserAction(user));
-	}
-
-	private getNextId(): string {
-		return "1";
-		// let nextId = "";
-		// let count: Observable<number> = this.store.let(fromRoot.getUsersState).count(() => { return true;});
-		// count.subscribe((x) => {
-		// 	nextId = x.toString();
-		// });
-		// return nextId;
 	}
 
 	private extractData(res: Response) {

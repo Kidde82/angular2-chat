@@ -10,38 +10,25 @@ import { Message } from "../models";
 
 @Injectable()
 export class MessageService {
-	private apiUrl: string = "http://localhost:3001";
+	// private apiUrl: string = "http://localhost:3001/api/v1/";
+	private apiUrl: string = "http://localhost:3001/";
 
 	constructor (
 		private http: Http
-	) {}
+	) { }
 
 	getMessages(): Observable<Message[]> {
-		return this.http.get(this.apiUrl + "/api/v1/messages")
-		.map(res => res.json());
+		return this.http.get(this.apiUrl + "messages")
+				.map(res => res.json());
 	}
 
 	save(message: Message): Observable<Message> {
-		if (!message.id) {
-			message.id = this.getNextId();
-		}
-
 		let headers = new Headers({ 'Content-Type': 'application/json' });
 		let options = new RequestOptions({ headers: headers });
 
-		return this.http.post(this.apiUrl + "/api/v1/message", message, options)
-				.map(this.extractData)
+		return this.http.post(this.apiUrl + "messages", message, options)
+				.map(res => res.json())
 				.catch(this.handleError);
-	}
-
-	private getNextId(): string {
-		return "1";
-		// let nextId = "";
-		// let count: Observable<number> = this.store.let(fromRoot.getUsersState).count(() => { return true;});
-		// count.subscribe((x) => {
-		// 	nextId = x.toString();
-		// });
-		// return nextId;
 	}
 
 	private extractData(res: Response) {

@@ -1,0 +1,51 @@
+{
+  "messages": [
+    {
+      "id": "1",
+      "timestamp": "Fri Jan 13 2017 14:16:41 GMT+0100 (W. Europe Standard Time)",
+      "user": {
+        "id": "1",
+        "info": {
+          "nickname": "Kidde"
+        }
+      },
+      "content": "Welcome, this is the first chat message"
+    },
+    {
+      "id": "2",
+      "user": {
+        "id": "1",
+        "info": {
+          "nickname": "Knodd1"
+        }
+      },
+      "timestamp": "2017-01-13T14:17:30.508Z",
+      "content": "Whats up?"
+    },
+    {
+      "id": "3",
+      "user": {
+        "id": "2",
+        "info": {
+          "nickname": "Knodd2"
+        }
+      },
+      "timestamp": "2017-01-13T14:17:40.719Z",
+      "content": "Not much, and you?"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "info": {
+        "nickname": "Knodd1"
+      }
+    },
+    {
+      "id": "2",
+      "info": {
+        "nickname": "Knodd2"
+      }
+    }
+  ]
+}

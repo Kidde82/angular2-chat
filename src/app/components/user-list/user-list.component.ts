@@ -1,5 +1,5 @@
 import "rxjs/add/operator/let";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
@@ -12,7 +12,8 @@ import { User } from "../../models";
 	templateUrl: "./user-list.component.html",
 	providers: [UserSelector]
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent {
+
 	users$: Observable<User[]>;
 
 	constructor (
@@ -20,9 +21,5 @@ export class UserListComponent implements OnInit {
 		private userSelector: UserSelector
 	) {
 		this.users$ = store.select(this.userSelector.getUsers());
-	}
-
-	ngOnInit() {
-		console.log("user list oninit");
 	}
 }

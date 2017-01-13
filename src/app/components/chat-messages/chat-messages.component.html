@@ -1,11 +1,11 @@
 <h1>Chat messages</h1>
 
 <div *ngFor="let message of messages$ | async">
-	{{message.user.info.nickname}} {{message.timestamp}}
+	{{message.user.info.nickname}} {{getDateTime(message.timestamp)}}
 	<br />
 	{{message.content}}
 	<br /><br />
 </div>
 
 <input type="text" #newMessage />
-<button (click)="saveMessage(newMessage)">Skicka</button>
+<button (click)="saveMessage(newMessage)">Send</button>

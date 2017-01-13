@@ -45,7 +45,5 @@ import { UserEffects, MessageEffects } from './effects';
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {
-	constructor() {
-		console.log("constructor");
-	}
+	constructor() { }
 }

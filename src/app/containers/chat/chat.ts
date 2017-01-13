@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Inject } from "@angular/core";
+import { Component, Inject } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs/Observable";
 
@@ -10,30 +10,14 @@ import { User } from "../../models";
 	styleUrls: ["./chat.css"],
 	templateUrl: "./chat.html"
 })
-export class Chat implements OnInit, OnChanges {
+export class Chat {
 
 	constructor(
 		private userService: UserService,
 		private sessionStorageService: SessionStorageService
-	) {
-		this.updateState();
-	}
-
-	ngOnInit() {
-		console.log("OnInit");
-	}
-
-	ngOnChanges() {
-		console.log("OnChange");
-	}
-
-	updateState() {
-		console.log("Updatestate chat.ts");
-		// console.log(this.store.select("users"));
-	}
+	) { }
 
 	clearSession() {
-		console.log("clearSession");
 		this.sessionStorageService.remove("currentUser");
 	}
 
