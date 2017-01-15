@@ -3,4 +3,5 @@ export interface User {
 	info: {
 		nickname: string;
 	};
+	typing: boolean;
 };

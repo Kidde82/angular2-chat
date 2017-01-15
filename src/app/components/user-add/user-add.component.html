@@ -1,2 +1,3 @@
-<input type="text" #nickname />
-<button (click)="saveUser(nickname)">Register</button>
+<span>Nickname: </span>
+<input type="text" #nickname (keyup)="onKey($event)" />
+<button (click)="getUser(nickname)">Register</button>

@@ -1,0 +1,18 @@
+:host .nickname {
+	font-weight: bold;
+}
+
+:host .timestamp {
+	color: gray;
+	font-size: 10px;
+}
+
+:host .content {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+:host .typing-users {
+	color: gray;
+	font-size: 10px;
+}

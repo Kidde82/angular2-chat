@@ -1,0 +1,19 @@
+:host {
+	border: 1px solid black;
+	display: block;
+}
+
+:host .clear {
+	clear: both;
+}
+
+:host user-list {
+	width: 200px;
+	display: table-cell;
+	padding: 5px;
+}
+
+:host chat-messages {
+	display: table-cell;
+	padding: 5px;
+}

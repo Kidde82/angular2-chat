@@ -7,45 +7,50 @@
         "id": "1",
         "info": {
           "nickname": "Kidde"
-        }
+        },
+        "typing": false
       },
-      "content": "Welcome, this is the first chat message"
+      "content": "Welcome, this is the first chat message..."
     },
     {
       "id": "2",
       "user": {
-        "id": "1",
+        "id": "2",
         "info": {
-          "nickname": "Knodd1"
-        }
+          "nickname": "Beta"
+        },
+        "typing": true
       },
-      "timestamp": "2017-01-13T14:17:30.508Z",
-      "content": "Whats up?"
+      "timestamp": "2017-01-15T15:29:34.020Z",
+      "content": "Hello?"
     },
     {
       "id": "3",
       "user": {
-        "id": "2",
+        "id": "1",
         "info": {
-          "nickname": "Knodd2"
-        }
+          "nickname": "Alpha"
+        },
+        "typing": true
       },
-      "timestamp": "2017-01-13T14:17:40.719Z",
-      "content": "Not much, and you?"
+      "timestamp": "2017-01-15T15:29:41.798Z",
+      "content": "Hi! how are you?"
     }
   ],
   "users": [
     {
       "id": "1",
       "info": {
-        "nickname": "Knodd1"
-      }
+        "nickname": "Alpha"
+      },
+      "typing": false
     },
     {
       "id": "2",
       "info": {
-        "nickname": "Knodd2"
-      }
+        "nickname": "Beta"
+      },
+      "typing": false
     }
   ]
 }

@@ -1,11 +1,16 @@
-<h1>Chat messages</h1>
-
 <div *ngFor="let message of messages$ | async">
-	{{message.user.info.nickname}} {{getDateTime(message.timestamp)}}
-	<br />
-	{{message.content}}
-	<br /><br />
+	<span class="nickname">{{message.user.info.nickname}}</span> <span class="timestamp">{{getDateTime(message.timestamp)}}</span>
+	<div class="content">
+		{{message.content}}
+	</div>
 </div>
 
-<input type="text" #newMessage />
-<button (click)="saveMessage(newMessage)">Send</button>
+<div class="typing-users" *ngIf="(typingUsers$ | async)?.length>0">
+	<span *ngFor="let user of typingUsers$ | async">{{user.info.nickname}}</span>
+	<span>is typing...</span>
+</div>
+
+<div>
+	<input type="text" #newMessage (keyup)="onKey($event)" />
+	<button (click)="getMessage(newMessage)">Send</button>
+</div>

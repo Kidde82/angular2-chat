@@ -25,10 +25,22 @@ export class UserService {
 		}
 
 	save(user: User): Observable<User> {
+		console.log("save");
+		console.log(user);
 		let headers = new Headers({ 'Content-Type': 'application/json' });
 		let options = new RequestOptions({ headers: headers });
 
 		return this.http.post(this.apiUrl + "users", user, options)
+				.map(this.extractData)
+				.catch(this.handleError);
+	}
+
+	update(user: User): Observable<User> {
+		let headers = new Headers({ 'Content-Type': 'application/json' });
+		let options = new RequestOptions({ headers: headers });
+		console.log("updateuser");
+		console.log(user);
+		return this.http.put(this.apiUrl + "users/" + user.id, user, options)
 				.map(this.extractData)
 				.catch(this.handleError);
 	}

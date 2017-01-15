@@ -10,7 +10,8 @@ import { User, Message } from "../../models";
 
 @Component({
 	selector: "chat-window",
-	templateUrl: "./chat-window.component.html"
+	templateUrl: "./chat-window.component.html",
+	styleUrls: ["./chat-window.component.css"]
 })
 export class ChatWindowComponent implements OnInit {
 

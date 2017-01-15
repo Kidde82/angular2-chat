@@ -1,0 +1,8 @@
+:host chat-window, :host user-add {
+	display: block;
+	margin-bottom: 20px;
+}
+
+:host chat-window {
+	display: table-row;
+}
