@@ -11,46 +11,8 @@
         "typing": false
       },
       "content": "Welcome, this is the first chat message..."
-    },
-    {
-      "id": "2",
-      "user": {
-        "id": "2",
-        "info": {
-          "nickname": "Beta"
-        },
-        "typing": true
-      },
-      "timestamp": "2017-01-15T15:29:34.020Z",
-      "content": "Hello?"
-    },
-    {
-      "id": "3",
-      "user": {
-        "id": "1",
-        "info": {
-          "nickname": "Alpha"
-        },
-        "typing": true
-      },
-      "timestamp": "2017-01-15T15:29:41.798Z",
-      "content": "Hi! how are you?"
     }
   ],
   "users": [
-    {
-      "id": "1",
-      "info": {
-        "nickname": "Alpha"
-      },
-      "typing": false
-    },
-    {
-      "id": "2",
-      "info": {
-        "nickname": "Beta"
-      },
-      "typing": false
-    }
   ]
 }
